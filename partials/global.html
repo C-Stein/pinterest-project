@@ -1,11 +1,11 @@
 <div class="col-md-3">
-  <div ng-repeat="song in songs | filter:searchSong | filter:songAlbum | filter:songArtist.artistName">
+  <div ng-repeat="pin in pins">
     <div class="">
-      <img ng-src="">
-      <h4>Title</h4>
+      <img ng-src="{{pin.img}}">
+      <h4>{{pin.title}}</h4>
       <div>
         <button type="button" class="pull-left">Add</button>
-        <h4 class="pull-right">Tag:</h4>
+        <h4 class="pull-right"></h4>
       </div>
     </div>
   </div>
