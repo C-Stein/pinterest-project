@@ -10,17 +10,22 @@ app.controller("GlobalCtrl", ["$scope", "$firebaseArray", "$firebaseAuth", "uid"
       console.log("Authenticated successfully with payload:", authData);
       $scope.searchCategories = "";
 
-      console.log("authData.uid", authData.uid);  
+       
       uid.addUid(authData.uid);
 
       $scope.uid = uid.getUid();
       console.log("$scope.uid", $scope.uid);
       
       $scope.pins = new $firebaseArray(ref.child('pins'));
+
       $scope.addToUser = function(pin) {
-        var pinsIndex = $scope.pins.indexOf(pin);
-        $scope.pins = new $firebaseArray(ref.child('users'));
-        $scope.pins.$add(authData.uid);
+        $scope.pins.$add({
+          "img": pin.img, 
+          "tag": pin.tag,
+          "title": pin.title,
+          "url": pin.url,
+          "uid": $scope.uid
+        });
       }
     }
   });

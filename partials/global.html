@@ -5,7 +5,7 @@
       <option></option>
     </select> -->
 <br>
-<div ng-repeat="pin in pins  | filter: searchPins">
+<div ng-repeat="pin in pins  | filter: searchPins | unique: 'img'">
   <div class="col-md-3">
    <div class="">
      <img ng-src="{{pin.img}}">
