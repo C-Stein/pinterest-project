@@ -1,7 +1,7 @@
 app.controller("addPinCtrl", ["$scope", "$firebaseArray",
   function($scope, $firebaseArray) {
 
-    var ref = new Firebase("https://pinterest-project.firebaseio.com/pins");
+    // var ref = new Firebase("https://pinterest-project.firebaseio.com/pins");
 
     $scope.pins = $firebaseArray(ref);
 
