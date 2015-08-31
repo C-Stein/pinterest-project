@@ -1,12 +1,14 @@
-app.controller("addPinCtrl", ["$scope", "$firebaseArray", "$firebaseAuth",
-  function($scope, $firebaseArray, $firebaseAuth) {
-
+app.controller("addPinCtrl", ["$scope", "$firebaseArray",
+  function($scope, $firebaseArray) {
+    
     var ref = new Firebase("https://pinterest-project.firebaseio.com/pins");
-    var auth = $firebaseAuth(ref);
 
     $scope.pins = $firebaseArray(ref);
 
+    console.log("$Scope.pins from addPins.js", $scope.pins);
+
     $scope.addPin = function() {
+      console.log("adding pin");
     $scope.pins.$add({
       "img": $scope.newPin.img, 
       "tag": $scope.newPin.tag,
@@ -14,17 +16,7 @@ app.controller("addPinCtrl", ["$scope", "$firebaseArray", "$firebaseAuth",
       "url": $scope.newPin.url,
       "uid": ""
     });
+    console.log($scope.newPin);
     $scope.newPin = {"":""};
    };
-
-
- 
-ref.authWithOAuthPopup("github", function(error, authData) {
-  if (error) {
-    console.log("Login Failed!", error);
-  } else {
-    console.log("Authenticated successfully with payload:", authData);
-  }
-});
-
-  }]);
+}]);
