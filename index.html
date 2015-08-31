@@ -9,9 +9,20 @@
 
 
 <body ng-app="Pinterest">
-<h1>Pinterest Project</h1>
 
-<div ng-view></div>
+  <h1>Pinterest Project</h1>
+
+  <a href="partials/add-pin-form.html"><button class="pull-right">Add Pin</button></a>
+  
+  <section ng-controller="GlobalCtrl">
+    <h4>Search by categories:</h4>
+    <select ng-model="searchCategories"
+            ng-options="value.tag for value in pins | unique: 'tag'">
+      <option>--</option>
+    </select>
+  </section>
+
+  <div ng-view></div>
 
 
 
@@ -19,9 +30,9 @@
   <script src="lib/bower_components/jquery/dist/jquery.min.js"></script>
   <script src="lib/bower_components/angular/angular.min.js"></script>
   <script src="lib/bower_components/angular-route/angular-route.js"></script>
+  <script src="lib/bower_components/angular-filter/dist/angular-filter.min.js"></script>
   <script src="/lib/bower_components/firebase/firebase.js"></script>
   <script src="/lib/bower_components/angularfire/dist/angularfire.min.js"></script>
-  <script src="lib/bower_components/angular-filter/dist/angular-filter.min.js"></script>
   <script src="lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="app/app.js"></script>
   <script src="app/controllers/global.js"></script>

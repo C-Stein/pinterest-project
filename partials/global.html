@@ -1,12 +1,10 @@
-<div class="col-md-3">
-  <div ng-repeat="pin in pins">
-    <div class="">
+<div ng-repeat="pin in pins">
+  <div class="col-md-3 col-xs-4">
       <img ng-src="{{pin.img}}">
       <h4>{{pin.title}}</h4>
       <div>
-        <button type="button" class="pull-left">Add</button>
+        <button type="button" class="pull-left">Add Pin</button>
         <h4 class="pull-right"></h4>
       </div>
-    </div>
   </div>
 </div>
