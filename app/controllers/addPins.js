@@ -16,4 +16,13 @@ app.controller("addPinCtrl", ["$scope", "$firebaseArray",
     $scope.newPin = {"":""};
    };
 
+
+    ref.authWithOAuthPopup("facebook", function(error, authData) {
+      if (error) {
+        console.log("Login Failed!", error);
+      } else {
+        console.log("Authenticated successfully with payload:", authData);
+      }
+    });
+
   }]);
