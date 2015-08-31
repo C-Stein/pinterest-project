@@ -1,6 +1,6 @@
 
-app.controller("GlobalCtrl", ["$scope", "$firebaseArray", "$firebaseAuth", "uid", 
-  function($scope, $firebaseArray, $firebaseAuth, uid) {
+app.controller("GlobalCtrl", ["$scope", "$firebaseArray", "$firebaseAuth", "uid", "$location",
+  function($scope, $firebaseArray, $firebaseAuth, uid, $location) {
   var ref = new Firebase("https://pinterest-project.firebaseio.com/");
   var auth = $firebaseAuth(ref);
   ref.authWithOAuthPopup("github", function(error, authData) {
@@ -26,6 +26,7 @@ app.controller("GlobalCtrl", ["$scope", "$firebaseArray", "$firebaseAuth", "uid"
           "url": pin.url,
           "uid": $scope.uid
         });
+        $location.url("/personal");
       }
     }
   });
