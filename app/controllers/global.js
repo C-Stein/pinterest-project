@@ -1,8 +1,8 @@
 
-app.controller("GlobalCtrl", ["$scope", "$firebaseObject", function($scope, $firebaseObject) {
+app.controller("GlobalCtrl", ["$scope", "$firebaseArray", function($scope, $firebaseArray) {
 
  var ref = new Firebase("https://pinterest-project.firebaseio.com/pins");
- $scope.pins = new $firebaseObject(ref);
+ $scope.pins = new $firebaseArray(ref);
  console.log("$scope.pins", $scope.pins);
 
 }]);

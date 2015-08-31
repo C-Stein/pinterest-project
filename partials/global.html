@@ -1,5 +1,5 @@
 <div class="col-md-3">
- <div ng-repeat="pin in pins">
+ <div ng-repeat="pin in pins  | filter: searchPins">
    <div class="">
      <img ng-src="{{pin.img}}">
      <h4>{{pin.title}}</h4>

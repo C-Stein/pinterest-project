@@ -15,12 +15,14 @@
   
   <section ng-controller="GlobalCtrl">
     <h4>Search by categories:</h4>
-    <select ng-model="searchCategories"
+<!--     <select ng-model="searchCategories"
             ng-options="value.tag for value in pins | unique: 'tag'">
       <option>--</option>
-    </select>
-  </section>
+    </select> -->
+    <input type="text" ng-model="searchPins" placeholder="Search here" id="searchBox"/>
+
   <div ng-view></div>
+  </section>
 
 
 
