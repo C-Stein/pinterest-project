@@ -1,10 +1,10 @@
-<div ng-repeat="pin in pins">
+<div ng-repeat="pin in pins | filter: searchCategories">
   <div class="col-md-3 col-xs-4">
       <img ng-src="{{pin.img}}">
       <h4>{{pin.title}}</h4>
       <div>
         <button type="button" class="pull-left">Add Pin</button>
-        <h4 class="pull-right"></h4>
+        <h4 class="pull-right">Tag: {{pin.tag}}</h4>
       </div>
   </div>
 </div>
