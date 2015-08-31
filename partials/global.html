@@ -5,13 +5,13 @@
       <option>--</option>
     </select> -->
 <br>
-<div class="col-md-3">
- <div ng-repeat="pin in pins  | filter: searchPins">
+<div ng-repeat="pin in pins  | filter: searchPins">
+  <div class="col-md-3">
    <div class="">
      <img ng-src="{{pin.img}}">
      <h4>{{pin.title}}</h4>
      <div>
-        <button type="button" class="pull-left" ng-click="addToUser(pin)">
+        <button type="button" class="pull-left" ng-click="addToUser(pin)">Pin</button>
         <h4 class="pull-right">Tag: {{pin.tag}}</h4>
      </div>
    </div>

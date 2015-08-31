@@ -1,4 +1,4 @@
-app.controller("GlobalCtrl", ["$scope", "$firebaseArray", "$firebaseAuth", "$firebaseObject", function($scope, $firebaseArray, $firebaseAuth, $firebaseObject) {
+app.controller("GlobalCtrl", ["$scope", "$firebaseArray", "$firebaseAuth", function($scope, $firebaseArray, $firebaseAuth) {
 
   var ref = new Firebase("https://pinterest-project.firebaseio.com/");
   var auth = $firebaseAuth(ref);
@@ -15,8 +15,8 @@ app.controller("GlobalCtrl", ["$scope", "$firebaseArray", "$firebaseAuth", "$fir
 
       $scope.addToUser = function(pin) {
         var pinsIndex = $scope.pins.indexOf(pin);
-        $scope.pins = new $firebaseObject(ref.child('users'));
-        $scope.pins.$add(JSON.stringify($scope.pins[pinsIndex]));
+        $scope.pins = new $firebaseArray(ref.child('users'));
+        $scope.pins.$add(authData.uid);
       }
     }
   });
