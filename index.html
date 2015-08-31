@@ -11,18 +11,10 @@
 <body ng-app="Pinterest">
 
   <h1>Pinterest Project</h1>
-  <a href="partials/add-pin-form.html"><button class="pull-right">Add Pin</button></a>
-  
-  <section ng-controller="GlobalCtrl">
-    <h4>Search by categories:</h4>
-<!--     <select ng-model="searchCategories"
-            ng-options="value.tag for value in pins | unique: 'tag'">
-      <option>--</option>
-    </select> -->
-    <input type="text" ng-model="searchPins" placeholder="Search here" id="searchBox"/>
+  <a href="#/pin-form"><button class="pull-right">Add Pin</button></a>
+
 
   <div ng-view></div>
-  </section>
 
 
 

@@ -1,3 +1,10 @@
+<input type="text" ng-model="searchPins" placeholder="Search here" id="searchBox"/>
+<h4>Search by categories:</h4>
+<!--     <select ng-model="searchCategories"
+            ng-options="value.tag for value in pins | unique: 'tag'">
+      <option>--</option>
+    </select> -->
+<br>
 <div class="col-md-3">
  <div ng-repeat="pin in pins  | filter: searchPins">
    <div class="">
