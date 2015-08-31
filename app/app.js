@@ -7,7 +7,8 @@ app.config(['$routeProvider',
       when('/', {
         templateUrl: 'partials/global.html',
         controller: 'GlobalCtrl'
-      }).when ('/pin-form', {
+      }).
+      when ('/pin-form', {
         templateUrl: 'partials/add-pin-form.html',
         controller: 'addPinCtrl'
       }). 

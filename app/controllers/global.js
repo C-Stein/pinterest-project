@@ -3,6 +3,7 @@ app.controller("GlobalCtrl", ["$scope", "$firebaseArray", "$firebaseAuth", "$fir
   var ref = new Firebase("https://pinterest-project.firebaseio.com/");
   var auth = $firebaseAuth(ref);
 
+
   ref.authWithOAuthPopup("github", function(error, authData) {
     if (error) {
       console.log("Login Failed!", error);
