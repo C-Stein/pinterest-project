@@ -14,7 +14,7 @@ app.config(['$routeProvider',
       }).when ('/personal', {
         templateUrl: 'partials/personal.html',
         controller: 'PersonalCtrl'
-      otherwise ({
+      }).otherwise ({
         redirectTo: '/'
       });
 }]);
