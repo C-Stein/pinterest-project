@@ -11,8 +11,10 @@ app.config(['$routeProvider',
       when ('/pin-form', {
         templateUrl: 'partials/add-pin-form.html',
         controller: 'addPinCtrl'
-      }). 
-      otherwise ({
+      }).when ('/personal', {
+        templateUrl: 'partials/personal.html',
+        controller: 'PersonalCtrl'
+      }).otherwise ({
         redirectTo: '/'
       });
 }]);
