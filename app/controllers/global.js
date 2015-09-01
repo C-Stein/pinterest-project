@@ -34,8 +34,11 @@ app.controller("GlobalCtrl", ["$scope", "$firebaseArray", "$firebaseAuth", "uid"
         "url": pin.url,
         "uid": $scope.uid
       });
-      $location.url("/personal");
-    };     
+      // $location.url("/personal");
+    }; 
+    $(document).on("click", "#pinMsg", function(){
+      $(this).text("Pin has been added!").attr("disabled", "disabled");
+    });
   }
 }]);
 
