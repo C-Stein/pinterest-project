@@ -62,7 +62,7 @@ img:hover {
 
 .modal {
   max-width: 800px;
-  max-height: 600px; }
+  overflow-y: hidden; }
 
 .modal img {
   max-width: 500px; }
