@@ -6,7 +6,7 @@
     </select> -->
 <br>
 <div ng-repeat="pin in pins  | filter: searchPins | unique: 'img'">
-  <div class="col-md-2 col-xs-4">
+  <div class="col-md-2 pin">
    <div class="">
      <img ng-src="{{pin.img}}">
      <h4>{{pin.title}}</h4>
