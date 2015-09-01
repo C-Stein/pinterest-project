@@ -1,6 +1,7 @@
 app.factory("uid", function() {
   var uid;
 
+
   return {
     addUid: function(user) {
        uid = user;
@@ -8,6 +9,10 @@ app.factory("uid", function() {
     },
     getUid: function () {
         return uid;
+    },
+    isLoggedIn: function() {
+        var ref = new Firebase("https://pinterest-project.firebaseio.com/");
+        return !!ref.getAuth();
     }
   };
 });

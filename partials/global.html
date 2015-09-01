@@ -6,16 +6,18 @@
     </select> -->
 <br>
 <div ng-repeat="pin in pins  | filter: searchPins | unique: 'img'">
-  <div class="col-md-3">
+  <div class="col-md-2 pin">
    <div class="">
      <a href="" data-toggle="modal" data-target="#myModal"><img ng-src="{{pin.img}}"></a>
      <h4>{{pin.title}}</h4>
      <div>
         <button type="button" class="pull-left" ng-click="addToUser(pin)">Pin</button>
-        <h4 class="pull-right">Tag: {{pin.tag}}</h4>
+        <br>
+        <h4>Tag: {{pin.tag}}</h4>
      </div>
    </div>
  </div>
+
 <!-- <div ng-include="modal-image.html"></div> -->
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -55,3 +57,5 @@
   </div>
 </div>
  -->
+</div>
+
