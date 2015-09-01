@@ -6,13 +6,15 @@
     </select> -->
 <br>
 <div ng-repeat="pin in pins  | filter: searchPins | unique: 'img'">
-  <div class="col-md-3">
+  <div class="col-md-2 pin">
    <div class="">
      <img ng-src="{{pin.img}}">
      <h4>{{pin.title}}</h4>
      <div>
         <button type="button" class="pull-left" ng-click="addToUser(pin)">Pin</button>
-        <h4 class="pull-right">Tag: {{pin.tag}}</h4>
+        <br>
+        <h4>Tag: {{pin.tag}}</h4>
      </div>
    </div>
  </div>
+</div>
