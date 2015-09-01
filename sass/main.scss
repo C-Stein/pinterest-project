@@ -12,6 +12,7 @@
 
 .pin img {
   width: 236px;
+  max-height: 500px;
   margin: 0;
 }
 
@@ -20,7 +21,7 @@
 }
 
 body {
-  font-family: helvetica, sans-serif;
+  font-family: "helvetica neue", sans-serif;
   padding: 8px;
   background-color: #e9e9e9;
 }
