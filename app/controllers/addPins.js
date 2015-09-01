@@ -1,5 +1,5 @@
-app.controller("addPinCtrl", ["$scope", "$firebaseArray", "uid",
-  function($scope, $firebaseArray, uid) {
+app.controller("addPinCtrl", ["$scope", "$firebaseArray", "uid", "$location",
+  function($scope, $firebaseArray, uid, $location) {
     
     var ref = new Firebase("https://pinterest-project.firebaseio.com/pins");
 
@@ -21,5 +21,6 @@ app.controller("addPinCtrl", ["$scope", "$firebaseArray", "uid",
     });
     console.log($scope.newPin);
     $scope.newPin = {"":""};
+    $location.url('/');
    };
 }]);
