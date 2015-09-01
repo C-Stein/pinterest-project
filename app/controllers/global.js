@@ -3,13 +3,13 @@ app.controller("GlobalCtrl", ["$scope", "$firebaseArray", "$firebaseAuth", "uid"
   function($scope, $firebaseArray, $firebaseAuth, uid) {
   var ref = new Firebase("https://pinterest-project.firebaseio.com/");
   var auth = $firebaseAuth(ref);
+
   ref.authWithOAuthPopup("github", function(error, authData) {
     if (error) {
       console.log("Login Failed!", error);
     } else {
       console.log("Authenticated successfully with payload:", authData);
       $scope.searchCategories = "";
-
        
       uid.addUid(authData.uid);
 
@@ -29,4 +29,5 @@ app.controller("GlobalCtrl", ["$scope", "$firebaseArray", "$firebaseAuth", "uid"
       }
     }
   });
+
 }]);
