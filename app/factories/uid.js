@@ -12,7 +12,6 @@ app.factory("uid", function() {
     },
     isLoggedIn: function() {
         var ref = new Firebase("https://pinterest-project.firebaseio.com/");
-        console.log(ref.getAuth());
         return !!ref.getAuth();
     }
   };
