@@ -2,6 +2,7 @@ app.controller("GlobalCtrl", ["$scope", "$firebaseArray", "$firebaseAuth", "uid"
   function($scope, $firebaseArray, $firebaseAuth, uid, $location) {
   var ref = new Firebase("https://pinterest-project.firebaseio.com/");
   var auth = $firebaseAuth(ref);
+  $scope.uid = uid.getUid();
 
   if (!!uid.isLoggedIn() && uid.isLoggedIn() !== null) {
     runPage();
@@ -11,8 +12,6 @@ app.controller("GlobalCtrl", ["$scope", "$firebaseArray", "$firebaseAuth", "uid"
         console.log("Login Failed!", error);
       } else {
         console.log("Authenticated successfully with payload:", authData);
-        uid.addUid(authData.uid);
-        $scope.uid = uid.getUid();
         console.log("$scope.uid", $scope.uid);
         runPage();
       }
@@ -20,10 +19,13 @@ app.controller("GlobalCtrl", ["$scope", "$firebaseArray", "$firebaseAuth", "uid"
   }
 
   function runPage() {
+    $scope.uid = ref.getAuth().uid;
+    console.log($scope.uid);
     $scope.searchCategories = "";      
     $scope.pins = new $firebaseArray(ref.child('pins'));
 
     $scope.addToUser = function(pin) {
+      console.log(pin);
       $scope.pins.$add({
         "img": pin.img, 
         "tag": pin.tag,
