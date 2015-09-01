@@ -8,7 +8,7 @@
 <div class="divcontainer" ng-repeat="pin in pins  | filter: searchPins | unique: 'img'">
   <div class="col-md-2 pin">
    <div class="">
-     <img ng-src="{{pin.img}}">
+     <a href="" data-toggle="modal" data-target="#{{$index}}"><img ng-src="{{pin.img}}"></a>
      <h4>{{pin.title}}</h4>
      <div>
         <button id="pinIt" type="button" ng-click="addToUser(pin)"class="pull-right btn btn-default btn-sm">
@@ -18,5 +18,26 @@
         <h4>Tag: {{pin.tag}}</h4>
      </div>
    </div>
- </div>
-</div>
+  </div>
+
+  <div class="modal fade" id={{$index}} tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel"><h4>{{pin.title}}</h4>
+        </div>
+        <div class="modal-body">
+          <a target="_blank" href="{{pin.url}}" ><img ng-src="{{pin.img}}"></a>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="pinMsg" class="pull-left" ng-click="addToUser(pin)" data-toggle="modal">Pin</button>
+          <h4 class="pull-right">Tag: {{pin.tag}}</h4>
+          <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
