@@ -2,6 +2,10 @@
   overflow: hidden;
 }
 
+.divcontainer {
+  margin-left: 4%;
+}
+
 .pin {
   border: 1px solid black;
   border-radius: 6px;
@@ -12,7 +16,8 @@
 
 .pin img {
   width: 236px;
-  max-height: 500px;
+  max-height: 350px;
+  min-height: 350px;
   margin: 0;
 }
 
@@ -30,7 +35,23 @@ h1 {
   text-align: center;
 }
 
-.addBtn, .personalBtn {
-  float: right;
-  margin: 5px;
+#pinIt, #delPin {
+  margin-right: 5px;
+  color: white;
+  background-color: red;
+  font-family:'Brush Script MT', cursive;
+  font-size: 16px;
+}
+
+
+#myPin, #addPin, #submit {
+  color: white;
+  background-color: red;
+  margin-right: 15px;
+  font-family:'Brush Script MT', cursive;
+  font-size: 18px;
+}
+
+input[type="text"] {
+  width: 400px;
 }

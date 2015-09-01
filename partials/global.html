@@ -1,17 +1,19 @@
-<input type="text" ng-model="searchPins" placeholder="Search here" id="searchBox"/>
 <h4>Search by categories:</h4>
+<input type="text" ng-model="searchPins" placeholder="Search here" id="searchBox"/><br>
 <!--     <select ng-model="searchCategories"
             ng-options="value.tag for value in pins | unique: 'tag'">
       <option></option>
     </select> -->
 <br>
-<div ng-repeat="pin in pins  | filter: searchPins | unique: 'img'">
+<div class="divcontainer" ng-repeat="pin in pins  | filter: searchPins | unique: 'img'">
   <div class="col-md-2 pin">
    <div class="">
      <img ng-src="{{pin.img}}">
      <h4>{{pin.title}}</h4>
      <div>
-        <button type="button" class="pull-left" ng-click="addToUser(pin)">Pin</button>
+        <button id="pinIt" type="button" ng-click="addToUser(pin)"class="pull-right btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span>Pin it
+        </button>
         <br>
         <h4>Tag: {{pin.tag}}</h4>
      </div>
