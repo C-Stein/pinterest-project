@@ -34,7 +34,18 @@ app.controller("GlobalCtrl", ["$scope", "$firebaseArray", "$firebaseAuth", "uid"
         "url": pin.url,
         "uid": $scope.uid
       });
-      // $location.url("/personal");
+      $location.url("/personal");
+    }; 
+  
+    $scope.addFromModal = function(pin) {
+      console.log(pin);
+      $scope.pins.$add({
+        "img": pin.img, 
+        "tag": pin.tag,
+        "title": pin.title,
+        "url": pin.url,
+        "uid": $scope.uid
+      });
     }; 
     $(document).on("click", "#pinMsg", function(){
       $(this).text("Pin has been added!").attr("disabled", "disabled");
