@@ -2,16 +2,9 @@
   overflow: hidden;
 }
 
-.modal .image-wrapper {
-    text-align: center;
-}
-.modal .image-wrapper img {
-    max-width: 560px;
-    max-height: 560px;
-}
-.modal .image-description {
-    text-align: center;
-    margin-top: 10px;
+.modal {
+    max-width: 800px;
+    max-height: 400px;
 }
 
 .pin {
