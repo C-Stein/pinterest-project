@@ -7,7 +7,7 @@ app.controller("addPinCtrl", ["$scope", "$firebaseArray", "uid",
 
     console.log("$Scope.pins from addPins.js", $scope.pins);
 
-    $scope.uid = uid.getUid();
+    $scope.uid = ref.getAuth().uid;
     console.log("$scope.uid", $scope.uid);
 
     $scope.addPin = function() {

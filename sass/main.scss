@@ -2,14 +2,18 @@
   overflow: hidden;
 }
 
-<<<<<<< HEAD
+
 .divcontainer {
   margin-left: 4%;
-=======
+}
 .modal {
     max-width: 800px;
-    max-height: 400px;
->>>>>>> c4312c2ce9359a3b70169e613e6f3026988390a4
+    max-height: 600px;
+}
+
+.modal img {
+  max-width: 500px;
+  
 }
 
 .pin {
@@ -41,7 +45,7 @@ h1 {
   text-align: center;
 }
 
-#pinIt, #delPin {
+.pinIt, #delPin {
   margin-right: 5px;
   color: white;
   background-color: red;

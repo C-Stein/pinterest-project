@@ -11,7 +11,7 @@
      <a href="" data-toggle="modal" data-target="#{{$index}}"><img ng-src="{{pin.img}}"></a>
      <h4>{{pin.title}}</h4>
      <div>
-        <button id="pinIt" type="button" ng-click="addToUser(pin)"class="pull-right btn btn-default btn-sm">
+        <button type="button" ng-click="addToUser(pin)"class="pinIt pull-right btn btn-default btn-sm">
           <span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span>Pin it
         </button>
         <br>
@@ -31,9 +31,8 @@
           <a target="_blank" href="{{pin.url}}" ><img ng-src="{{pin.img}}"></a>
         </div>
         <div class="modal-footer">
-          <button type="button" id="pinMsg" class="pull-left" ng-click="addFromModal(pin)" data-toggle="modal">Pin</button>
+          <button type="button" id="pinMsg" class="pinIt pull-left btn btn-default btn-sm" ng-click="addFromModal(pin)" data-toggle="modal"><span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span>Pin it</button>
           <h4 class="pull-right">Tag: {{pin.tag}}</h4>
-          <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
