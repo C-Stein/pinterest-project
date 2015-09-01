@@ -11,6 +11,20 @@
     max-height: 600px;
 }
 
+.modal-header{
+  background-color: lightgrey;
+  opacity: 0.7;
+}
+
+.modal-footer {
+  background-color: lightgrey;
+  opacity: 0.7;
+}
+
+.modal-body {
+  text-align: center;
+} 
+
 .modal img {
   max-width: 500px;
   
