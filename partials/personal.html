@@ -1,6 +1,6 @@
 <div ng-repeat="pin in pins">
   <div class="col-md-2 pin">
-      <img ng-src="{{pin.img}}">
+      <a target="_blank" href="{{pin.url}}" ><img ng-src="{{pin.img}}">
       <h4>{{pin.title}}</h4>
       <div>
       <button id="delPin" type="button" class="pull-left btn btn-default btn-sm" ng-click="delPin(pin)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Delete Pin</button>
